@@ -1,0 +1,13 @@
+<div id="a" class="container" *ngIf = "!showFirstComponent">
+    <label>
+
+    
+    Enter Username <input type="text" placeholder="username" [(ngModel)]="name"/><br/><br/>
+    Enter Password  <input type="password" placeholder="password" [(ngModel)]="password"/><br/><br/>
+    <button class="btn btn-danger" (click)="loginuser(name,password)" >Login</button>
+</label>
+</div>
+
+<div *ngIf = "showFirstComponent">
+    <app-first></app-first>
+</div>

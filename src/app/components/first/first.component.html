@@ -1,0 +1,52 @@
+<div>
+    <div class='jumbotron bg-dark text-light'>
+        <h1>Welcome to Book Reviews</h1>
+        
+            <input class="form-control" placeholder="Enter Book Name" [(ngModel)]="bookName" name="bookname">
+            &nbsp;&nbsp;&nbsp;<br />
+            <button class="btn btn-outline-danger" (click)="getReview()">Search</button>
+        
+
+    </div>
+    <br /><br />
+    <table class="table table-striped table">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    NAME
+                </th>
+                <th>
+                    REVIEW
+                </th>
+                <th>
+                    RATING
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of bookReviews">
+                <td>{{i.name}}</td>
+                <td>{{i.review}}</td>
+                <td>{{i.rating}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div>
+        <label>
+            <h3>Give your Reviews and Rating about our book:</h3>
+
+            Review:<textarea [(ngModel)]="review">
+        Good
+    </textarea>
+            <br /><br />
+            Rating:<textarea [(ngModel)]="rating">
+        4.5
+    </textarea>
+            <br /><br />
+            <button class="btn btn-primary" (click)="addReview()">Add Reviews</button>
+        </label>
+
+    </div>
+</div>
